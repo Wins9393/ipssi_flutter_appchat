@@ -34,7 +34,7 @@ class MessagecontrollerState extends State<Messagecontroller> {
     return StreamBuilder<QuerySnapshot>(
         stream: FirestoreHelper().fire_message.orderBy(
             'envoiMessage', descending:
-        false).snapshots(),
+        true).snapshots(),
         builder: (BuildContext context, AsyncSnapshot <QuerySnapshot>snapshot) {
           if (!snapshot.hasData) {
             return const CircularProgressIndicator();
@@ -42,6 +42,7 @@ class MessagecontrollerState extends State<Messagecontroller> {
           else {
             List<DocumentSnapshot>documents = snapshot.data!.docs;
             return ListView.builder(
+                reverse: true,
                 itemCount: documents.length,
                 itemBuilder: (BuildContext ctx, int index) {
                   Message discussion = Message(documents[index]);
