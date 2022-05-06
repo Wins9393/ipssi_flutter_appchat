@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepOrange,
       ),
       home: const MyHomePage(title: 'App Chat'),
     );
@@ -64,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(widget.title),
       ),
       body: Center(
@@ -79,9 +80,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ToggleButtons(
         children: const [Text("Inscription"), Text("Connexion")],
         isSelected: selections,
-        selectedColor: Colors.red,
+        selectedColor: Colors.brown,
         borderRadius: BorderRadius.circular(10),
-        disabledColor: Colors.white,
+        disabledColor: Colors.white10,
         onPressed: (int selected) {
           setState(() {
             selections[selected] = true;

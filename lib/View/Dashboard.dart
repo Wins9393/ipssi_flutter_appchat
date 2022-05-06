@@ -15,7 +15,9 @@ class DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text("Dashboard"),
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: (selected == 0) ? Text("Messagerie") : Text("Paramètres"),
           actions: [
             IconButton(
                 onPressed: (){
@@ -25,7 +27,7 @@ class DashboardState extends State<Dashboard> {
                         return const MyHomePage(title: '');
                       }
                   ));
-            }, icon: const Icon(Icons.exit_to_app, color: Colors.red)
+            }, icon: const Icon(Icons.exit_to_app, color: Colors.white)
             )
           ]),
         body: bodyPage(),
@@ -54,6 +56,7 @@ class DashboardState extends State<Dashboard> {
       onPageChanged: (value){
         setState(() {
           selected = value;
+          print(selected);
         });
       },
       children: [

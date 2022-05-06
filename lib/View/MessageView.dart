@@ -42,6 +42,15 @@ class MessageViewState extends State<MessageView>{
     print(MediaQuery.of(context).viewInsets);
     return Stack(
       children: [
+        Container(
+            constraints: BoxConstraints.expand(),
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: NetworkImage("https://images.unsplash.com/photo-1504941214544-9c1c44559ab4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"),
+                    fit: BoxFit.cover
+                )
+            )
+        ),
         Positioned(
           width: MediaQuery.of(context).size.width,
 

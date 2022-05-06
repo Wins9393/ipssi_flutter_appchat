@@ -21,13 +21,7 @@ class Messagecontroller extends StatefulWidget{
 class MessagecontrollerState extends State<Messagecontroller> {
   late Animation animation;
   late AnimationController controller;
-
-  @override
-
-  void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
-    super.didChangeDependencies();
-  }
+  late ControlsDetails defilementController;
 
   @override
   void dispose() {
